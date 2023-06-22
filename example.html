@@ -67,12 +67,13 @@
         clickCount++; // Increment the click count
 
         if (clickCount === maxClickCount) {
-            window.location.href = targetURL; // Redirect to the target URL
+            window.open(targetURL, "_blank"); // Open the target URL in a new tab or window
         }
     }
 
     var button = document.querySelector(".button");
     button.addEventListener("click", handleClick);
 </script>
+
 </body>
 </html>
