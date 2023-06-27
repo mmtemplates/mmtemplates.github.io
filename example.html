@@ -51,16 +51,16 @@
 
 <body>
 <div>
-    <h1>အောက်ပါခလုတ်အား <br> သုံးချက် နှိပ်ပြီးဝင်ပါ </h1>
+    <h1>အောက်ပါခလုတ်အား <br> သုံးချက် ဆက်တိုက်နှိပ်ရန် </h1>
     <p> ဝန်ဆောင်မှုအားရယူရန် ဤနေရာကို ‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌ဖြတ်ကျော်ရမည်ဖြစ်ပါသည်။ အောက်ပါခလုတ်အား ၃ချက်နှိပ်ပြီးကျော်နိုင်ပါသည်။ This domain is for use in illustrative examples in documents. You may use this
     domain in literature without prior coordination or asking for permission.</p>
     <p><a href="#" target="webview" class="button">  Button / ခလုတ်  </a></p>
 </div>
-
 <script>
     var clickCount = 0;
     var maxClickCount = 3;
     var targetURL = "contact.html";
+    var timer;
 
     function handleClick(event) {
         event.preventDefault(); // Prevent the default link behavior
@@ -68,12 +68,20 @@
 
         if (clickCount === maxClickCount) {
             window.location.href = targetURL; // Redirect to the target URL within the same tab or window
+        } else {
+            clearTimeout(timer); // Clear any existing timer
+            timer = setTimeout(resetClickCount, 1700); // Start a new timer for 4 seconds
         }
+    }
+
+    function resetClickCount() {
+        clickCount = 0; // Reset the click count
     }
 
     var button = document.querySelector(".button");
     button.addEventListener("click", handleClick);
 </script>
+
 
 
 </body>
