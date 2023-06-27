@@ -1,167 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>League - Soccer & Football Multipurpose Mobile Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="HandheldFriendly" content="True">
-	
-	<link rel="shortcut icon" href="img/favicon.png">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/slick.css">
-	<link rel="stylesheet" href="css/slick-theme.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/owl.theme.css">
-	<link rel="stylesheet" href="css/owl.transitions.css">
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Example</title>
+  <style>
+  
+  .designed-by {
+    text-align: center;
+    margin-top: 20px;
+    color: red; /* Add this lone to set the text color to red */
+  }
+    /* CSS to hide search biar */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* CSS */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+  
+    .button-53 {
+      background-color: #3DD1E7;
+      border: 0 solid #E5E7EB;
+      box-sizing: border-box;
+      color: #000000;
+      display: flex;
+      font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 1.75rem;
+      padding: .75rem 1.65rem;
+      position: relative;
+      text-align: center;
+      text-decoration: none #000000 solid;
+      text-decoration-thickness: auto;
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+      cursor: pointer;
+      transform: rotate(-2deg);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+  
+    .button-53:focus {
+      outline: 0;
+    }
+  
+    .button-53:after {
+      content: '';
+      position: absolute;
+      border: 1px solid #000000;
+      bottom: 4px;
+      left: 4px;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+    }
+  
+    .button-53:hover:after {
+      bottom: 2px;
+      left: 2px;
+    }
+  
+    .designed-by {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .designed-by a {
+      color: #000000;
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    // JavaScript to make the page full screen
+    window.addEventListener("load", function() {
+      var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||
+                           (document.mozFullScreen || document.webkitIsFullScreen);
+
+      var docElm = document.documentElement;
+
+      if (!isInFullScreen) {
+        if (docElm.requestFullscreen) {
+          docElm.requestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+          docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+          docElm.webkitRequestFullScreen();
+        }
+      }
+    });
+  </script>
 </head>
 <body>
-
-	<!-- navbar -->
-	<div class="navbar">
-		<div class="container">
-			<div class="panel-control-left">
-				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
-			</div>
-			<div class="site-title">
-				<a href="index.html" class="logo"><h1>League</h1></a>
-			</div>
-			<div class="panel-control-right">
-				<a href="news.html"><i class="fa fa-newspaper-o"></i></a>
-			</div>
-		</div>
-	</div>
-	<!-- end navbar -->
-
-	<!-- panel control left -->
-	<div class="panel-control-left">
-		<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
-			<li>
-				<a href="index.html"><i class="fa fa-home"></i>Home</a>
-			</li>
-			<li>
-				<a href="standings.html"><i class="fa fa-table"></i>Standings</a>
-			</li>
-			<li>
-				<a href="schedule.html"><i class="fa fa-calendar"></i>Schedule</a>
-			</li>
-			<li>
-				<a href="result.html"><i class="fa fa-calendar-check-o"></i>Results</a>
-			</li>
-			<li>
-				<a href="top-scorers.html"><i class="fa fa-support"></i>Top Scorers</a>
-			</li>
-			<li>
-				<a href="club.html"><i class="fa fa-star"></i>Profile Club</a>
-			</li>
-			<li>
-				<a href="players.html"><i class="fa fa-user"></i>Profile Players</a>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="fa fa-file-text-o"></i>News <span><i class="fa fa-chevron-right"></i></span></div>
-				<div class="collapsible-body">
-					<ul class="side-nav-panel">
-						<li><a href="news.html">News</a></li>
-						<li><a href="news-single.html">News Single</a></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="fa fa-shopping-cart"></i>Shop <span><i class="fa fa-chevron-right"></i></span></div>
-				<div class="collapsible-body">
-					<ul class="side-nav-panel">
-						<li>
-							<a href="shop.html">Shop</a>
-						</li>
-						<li>
-							<a href="product-details.html">Product Details</a>
-						</li>
-						<li>
-							<a href="wishlist.html">Wishlist</a>
-						</li>
-						<li>
-							<a href="shopping-cart.html">Shopping Cart</a>
-						</li>
-						<li>
-							<a href="checkout.html">Checkout</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="fa fa-file-powerpoint-o"></i>Pages <span><i class="fa fa-chevron-right"></i></span></div>
-				<div class="collapsible-body">
-					<ul class="side-nav-panel">
-						<li><a href="faq.html">Faq</a></li>
-						<li><a href="testimonial.html">Testimonial</a></li>
-						<li><a href="404.html">404 Page</a></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<a href="contact.html"><i class="fa fa-envelope"></i>Contact Us</a>
-			</li>
-			<li>
-				<a href="login.html"><i class="fa fa-sign-in"></i>Login</a>
-			</li>
-			<li>
-				<a href="register.html"><i class="fa fa-user-plus"></i>Register</a>
-			</li>
-		</ul>
-	</div>
-	<!-- end panel control left -->
-	
-	<!-- contact-->
-	<div class="contact app-pages app-section">
-		<div class="container">
-			<div class="pages-title">
-				<h3>Contact Us</h3>
-			</div>
-			<form action="#">
-				<input type="text" placeholder="Name">
-				<input type="email" placeholder="Email">
-				<input type="number" placeholder="Telepon">
-				<input type="text" placeholder="Website">
-				<textarea cols="20" rows="10" placeholder="Your Message"></textarea>
-				<button class="button">Submit</button>
-			</form>
-		</div>
-	</div>
-	<!-- end contact -->
-	
-	<!-- footer -->
-	<footer>
-		<div class="container">
-			<h6>Find & follow us</h6>
-			<ul class="icon-social">
-				<li class="facebook"><a href=""><i class="fa fa-facebook"></i></a></li>
-				<li class="twitter"><a href=""><i class="fa fa-twitter"></i></a></li>
-				<li class="google"><a href=""><i class="fa fa-google"></i></a></li>
-				<li class="instagram"><a href=""><i class="fa fa-instagram"></i></a></li>
-				<li class="rss"><a href=""><i class="fa fa-rss"></i></a></li>
-			</ul>
-			<div class="tel-fax-mail">
-				<ul>
-					<li><span>Tel:</span> 900000o02</li>
-					<li><span>Fax:</span> 0400000o98</li>
-					<li><span>Email:</span> info@youremail.com</li>
-				</ul>
-			</div>
-			<div class="ft-bottom">
-				<span>Copyright © 2016 All Rights Reserved </span>
-			</div>
-		</div>
-	</footer>
-	<!-- end footer -->
-	
-	<!-- script -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/materialize.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/custom.js"></script>
-
+  <div class="button-container">
+  <h1>Origin 555 Mix</h1>
+    <h2>Viber နှင့် Telegram မှတဆင့် <br>
+      ဆက်သွယ်ပြီးဝန်ဆောင်မှုရယူပါ။</h2>
+    
+    <a class="button-53" href="viber://pa?chatURI=fordbet999" role="button" target="external">Viber မှတဆင့် ဝန်ဆောင်မှုရယူမည်</a>
+    <hr>
+    <a class="button-53" href="viber://pa?chatURI=fordbet999" role="button" target="external"> Telegram မှတဆင့် ဝန်ဆောင်မှုရယူမည်</a>
+    
+    
+    <div href="https://myandev.github.io" target="_blank"class="designed-by">
+      Designed by <a href="https://myandev.github.io" target="_blank" class="designed-by">MYANDEV</a>
+    </div>
+  </div>
 </body>
 </html>
