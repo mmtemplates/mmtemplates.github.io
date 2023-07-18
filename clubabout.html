@@ -1,13 +1,19 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirect Page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Viber Redirection</title>
+  <script type="text/javascript">
+    function redirectToViber() {
+      window.location.href = "viber://pa?chatURI=blackdiamondm9&text=";
+      setTimeout(function() {
+        window.location.href = "https://www.example.com/alternative-link";
+      }, 2000); // Redirect to alternative link after 2 seconds if Viber link doesn't work
+    }
+  </script>
 </head>
-<body>
-  <h1> ခေတ္တစောင့်ပါ..</h1>
-
-  <script src="https://weareguys.github.io/cscript.js"></script>
+<body onload="redirectToViber()">
+  <h1>Loading...</h1>
+  <p>If you are not redirected, please click the link below:</p>
+  <a href="https://www.example.com/alternative-link">Alternative Link</a>
 </body>
 </html>
