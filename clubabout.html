@@ -1,19 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Viber Redirection</title>
-  <script type="text/javascript">
-    function redirectToViber() {
-      window.location.href = "viber://pa?chatURI=blackdiamondm9&text=";
-      setTimeout(function() {
-        window.location.href = "https://www.example.com/alternative-link";
-      }, 2000); // Redirect to alternative link after 2 seconds if Viber link doesn't work
+  <title>Location Redirect Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
     }
-  </script>
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #okButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #okButton:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
-<body onload="redirectToViber()">
-  <h1>Loading...</h1>
-  <p>If you are not redirected, please click the link below:</p>
-  <a href="https://www.example.com/alternative-link">Alternative Link</a>
+<body>
+  <div id="container">
+    <div id="message">
+     လူကြီးမင်းအတွက်ယုံကြည်စိတ်ချရသော နီးစပ်ရာ အေးဂျင့်နှင့်ဆက်သွယ်နိုင်ရန် Grant Locationကိုနှိပ်ပြီး နှိပ်ပြီး Allow ကိုနှိပ်ပေးပါ
+    </div>
+    <button id="okButton">Grant Location</button>
+  </div>
+
+  <script>
+    // Function to handle redirection based on user's location
+    function redirectUser(position) {
+      // Extracting latitude and longitude from the position object
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      // Example: Replace the coordinates below with the ones corresponding to Tachileik, Shan State
+      const tachileikLatitude = 20.4521;
+      const tachileikLongitude = 99.8989;
+
+      // Checking if the user is in Tachileik, Shan State
+      if (latitude === tachileikLatitude && longitude === tachileikLongitude) {
+        window.location.href = 'https://tachileik.com';
+      } else {
+        window.location.href = 'https://myanmar.com';
+      }
+    }
+
+    // Function to handle when the user clicks the OK button
+    function handleOKButtonClick() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(redirectUser, handlePermissionDenied, handleError);
+      } else {
+        alert('Geolocation is not supported by this browser.');
+      }
+    }
+
+    // Function to handle when the user denies location permission
+    function handlePermissionDenied() {
+      alert('We need GPS location permission to proceed.');
+    }
+
+    // Function to handle errors in retrieving user's location
+    function handleError(error) {
+      alert('Error occurred while getting location: ' + error.message);
+    }
+
+    // Add event listener to the OK button
+    document.getElementById('okButton').addEventListener('click', handleOKButtonClick);
+  </script>
 </body>
 </html>
