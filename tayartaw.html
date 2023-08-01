@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #loadingMessage {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loadingMessage">
+        <noscript>
+            <h2>Please enable JavaScript to view this page.</h2>
+        </noscript>
+    </div>
+
+    <script>
+        // Function to check if the user's timezone is Myanmar (GMT+6:30)
+        function isMyanmarTimezone() {
+            const userTimezoneOffset = new Date().getTimezoneOffset();
+            // Myanmar timezone offset is 6 hours and 30 minutes ahead of GMT (390 minutes)
+            const myanmarTimezoneOffset = -(6 * 60 + 30);
+            return userTimezoneOffset === myanmarTimezoneOffset;
+        }
+
+        // Function to redirect the user to the appropriate page
+        function redirectToPage() {
+            const isMyanmar = isMyanmarTimezone();
+            if (isMyanmar) {
+                window.location.href = 'taungpawtar.html';
+            } else {
+                window.location.href = 'https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php';
+            }
+        }
+
+        // Call the function when the page is loaded
+        window.onload = redirectToPage;
+    </script>
+</body>
+
+</html>
