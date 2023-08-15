@@ -1,92 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Location Redirect Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Example</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
+  
+  .designed-by {
+    text-align: center;
+    margin-top: 20px;
+    color: red; /* Add this lone to set the text color to red */
+  }
+    /* CSS to hide search biar */
+    body::-webkit-scrollbar {
+      display: none;
     }
 
-    #container {
+    /* CSS */
+    body {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
 
-    #message {
-      font-size: 24px;
-      margin-bottom: 20px;
+    .button-container {
+      text-align: center;
     }
-
-    #okButton {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
+  
+    .button-53 {
+      background-color: #3DD1E7;
+      border: 0 solid #E5E7EB;
+      box-sizing: border-box;
+      color: #000000;
+      display: flex;
+      font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 1.75rem;
+      padding: .75rem 1.65rem;
+      position: relative;
+      text-align: center;
+      text-decoration: none #000000 solid;
+      text-decoration-thickness: auto;
+      width: 100%;
+      max-width: 460px;
+      position: relative;
       cursor: pointer;
+      transform: rotate(-2deg);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
     }
-
-    #okButton:hover {
-      background-color: #0056b3;
+  
+    .button-53:focus {
+      outline: 0;
+    }
+  
+    .button-53:after {
+      content: '';
+      position: absolute;
+      border: 1px solid #000000;
+      bottom: 4px;
+      left: 4px;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+    }
+  
+    .button-53:hover:after {
+      bottom: 2px;
+      left: 2px;
+    }
+  
+    .designed-by {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .designed-by a {
+      color: #000000;
+      text-decoration: none;
     }
   </style>
+  <script>
+    // JavaScript to make the page full screen
+    window.addEventListener("load", function() {
+      var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||
+                           (document.mozFullScreen || document.webkitIsFullScreen);
+
+      var docElm = document.documentElement;
+
+      if (!isInFullScreen) {
+        if (docElm.requestFullscreen) {
+          docElm.requestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+          docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+          docElm.webkitRequestFullScreen();
+        }
+      }
+    });
+  </script>
 </head>
 <body>
-  <div id="container">
-    <div id="message">
-     လူကြီးမင်းအတွက်ယုံကြည်စိတ်ချရသော နီးစပ်ရာ အေးဂျင့်နှင့်ဆက်သွယ်နိုင်ရန် Grant Locationကိုနှိပ်ပြီး နှိပ်ပြီး Allow ကိုနှိပ်ပေးပါ
+  <div class="button-container">
+  <h1>Club388</h1>
+    <h2>Viberနှင့် Telegram မှတဆင့် ဆက်သွယ်ရန်နိပ်ပါ။</h2>
+    <h2>Contact Us from Viber and Telegram</h2>
+    <a class="button-53" href="https://cutt.ly/1CvTvoe" role="button" target="external">Go To Viber</a>
+   <hr>
+    <a class="button-53" href="https://cutt.ly/TCnMaNm" role="button" target="external">Go To Telegram</a>
+   <hr>
+    <div href="https://myandev.github.io" target="_blank"class="designed-by">
+      Designed by <a href="https://myandev.github.io" target="_blank" class="designed-by">MYANDEV</a>
     </div>
-    <button id="okButton">Grant Location</button>
   </div>
-
-  <script>
-    // Function to handle redirection based on user's location
-    function redirectUser(position) {
-      // Extracting latitude and longitude from the position object
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      // Example: Replace the coordinates below with the ones corresponding to Tachileik, Shan State
-      const tachileikLatitude = 20.4521;
-      const tachileikLongitude = 99.8989;
-
-      // Checking if the user is in Tachileik, Shan State
-      if (latitude === tachileikLatitude && longitude === tachileikLongitude) {
-        window.location.href = 'https://tachileik.com';
-      } else {
-        window.location.href = 'https://myanmar.com';
-      }
-    }
-
-    // Function to handle when the user clicks the OK button
-    function handleOKButtonClick() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(redirectUser, handlePermissionDenied, handleError);
-      } else {
-        alert('Geolocation is not supported by this browser.');
-      }
-    }
-
-    // Function to handle when the user denies location permission
-    function handlePermissionDenied() {
-      alert('We need GPS location permission to proceed.');
-    }
-
-    // Function to handle errors in retrieving user's location
-    function handleError(error) {
-      alert('Error occurred while getting location: ' + error.message);
-    }
-
-    // Add event listener to the OK button
-    document.getElementById('okButton').addEventListener('click', handleOKButtonClick);
-  </script>
 </body>
 </html>
